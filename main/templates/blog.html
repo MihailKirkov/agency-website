@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title %} Home Page {% endblock title%}
+{% block content%}
+
+<form id="form">
+    {% csrf_token %}
+    <div class="form-field">
+        <input required class="form-control" id="name" type="text" name="name" placeholder="Name">
+    </div>
+    <div class="form-field">
+        <input required class="form-control" id="email" type="email" name="email" placeholder="Email">
+    </div>
+
+    <input id="form-button" class="btn btn-success btn-block" type="submit" value="Subscribe to newsletter">
+</form>
+
+
+
+<script type="text/javascript">
+    
+    var form = document.getElementById('form')
+    var name = '', email=''
+    csrftoken = form.getElementsByTagName("input")[0].value
+    console.log("New token:", csrftoken)
+    {% comment %} csrftoken = form.getElementsByTagName("input")[0].value
+    console.log("New token:", csrftoken) {% endcomment %}
+    form.addEventListener('submit', function(e){
+        e.preventDefault()
+        console.log('Form submitted...')
+        name = document.getElementById('name').value
+        email = document.getElementById('email').value
+        console.log('NAME: ', name, 'EMAIL: ', email)
+        
+        document.getElementById('name').value = null
+        document.getElementById('email').value = null
+        submitFormData()
+    })
+
+
+    function submitFormData() {
+        console.log("Submitting Form Data")
+        var url = '/process_subscription/'
+        fetch (url, {
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json',
+                'X-CSRFToken' : csrftoken,
+            },
+            body: JSON.stringify({'name': name, 'email': email}),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(email + 'is being processed in the backend');
+            window.location.href = "{% url 'blog' %}"
+        })
+    }
+</script>
+
+{% endblock content%}
