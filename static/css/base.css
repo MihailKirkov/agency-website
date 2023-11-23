@@ -37,6 +37,7 @@ body {
     transform: scale(1.15);
     transition: 0.1s ease;
     background: linear-gradient(to right, var(--main-color1), var(--main-color2));
+    -webkit-background-clip: text;
     background-clip: text;
 }
 
