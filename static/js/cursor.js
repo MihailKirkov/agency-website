@@ -1,4 +1,4 @@
-const coords = { x: 0, y: 0};
+const coords = { x: 1, y: 0};
 const circles = document.querySelectorAll(".circle");
 const colors = [
     "#1f005c",
@@ -21,9 +21,9 @@ circles.forEach(function (circle, index) {
     circle.style.backgroundColor = colors[index % colors.length];
 });
 
-window.addEventListener("mousemove", function(e) {
-    coords.x = e.clientX;
-    coords.y = e.clientY;
+document.addEventListener("mousemove", function(e) {
+    coords.x = e.pageX;
+    coords.y = e.pageY;
 });
 
 

@@ -20,7 +20,7 @@ body {
     top:0;
     left:0;
     pointer-events: none;
-    z-index: 1;
+    z-index: 99;
 }
 
 .navbar-nav a {
@@ -44,6 +44,11 @@ body {
     border-image: linear-gradient(to right, #1f005c, #ffb56b);
     border-image-slice: 1;
     animation: borderAnimation 2s linear infinite;
+    text-shadow: 0 0 10px #1f005c,
+                    0 0 20px #ffb56b,
+                    0 0 40px #1f005c;
+    box-shadow: 0 0 15px #1f005c,
+                0 0 30px #ffb56b;
 }
 
 @keyframes borderAnimation {
@@ -51,7 +56,7 @@ body {
         background-size: 100% 100%;
     }
     50% {
-        background-size: 150% 120%;
+        background-size: 170% 170%;
     } 
     100% {
         background-size: 100% 100%;
