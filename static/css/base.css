@@ -1,9 +1,82 @@
-.navbar {
-    background: linear-gradient(rgb(135, 0, 79), #590069,#46d8ff);
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: arial;
 }
+
+body {
+    background: rgba(1,1,1);
+    cursor: none;
+    color: white;
+}
+
+.circle {
+    height:24px;
+    width:24px;
+    border-radius: 24px;
+    background-color: white;
+    position: absolute;
+    top:0;
+    left:0;
+    pointer-events: none;
+    z-index: 1;
+}
+
 .navbar-nav a {
     color: white;
     font-size: 1.2em;
+}
+.navbar-nav a:hover {
+    color: transparent!important;
+    transform: scale(1.15);
+    transition: 0.1s ease;
+    background: linear-gradient(to right, #1f005c, #ffb56b);
+    background-clip: text;
+}
+
+.active {
+    color: transparent!important;
+    transform: scale(1.1);
+    background: linear-gradient(to right, #1f005c, #ffb56b);
+    background-clip: text;
+    border: 1px ridge;  
+    border-image: linear-gradient(to right, #1f005c, #ffb56b);
+    border-image-slice: 1;
+    animation: borderAnimation 2s linear infinite;
+}
+
+@keyframes borderAnimation {
+    0% {
+        background-size: 100% 100%;
+    }
+    50% {
+        background-size: 150% 120%;
+    } 
+    100% {
+        background-size: 100% 100%;
+    }
+}
+
+
+.dropdown-menu {
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.my-dropdown-toggle:focus {
+    transform: scale(1.15);
+    color:transparent!important;
+    background: linear-gradient(to right, #1f005c, #ffb56b);
+    background-clip: text;
+}
+
+
+.dropdown-menu a:hover{
+    transform: scale(1.1);
+    color:transparent!important;
+    background: linear-gradient(to right, #1f005c, #ffb56b);
+    background-clip: text;
 }
 
 .logo {

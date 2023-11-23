@@ -6,19 +6,19 @@ from django.contrib import messages
 from .models import NewsletterSubscriber
 
 def home(request):
-    return render(request, "home.html")
+    return render(request, "home.html", {'current_path': request.path})
 
 def about(request):
-    return render(request, "about.html")
+    return render(request, "about.html", {'current_path': request.path})
 
 def contact(request):
-    return render(request, "contact.html")
+    return render(request, "contact.html", {'current_path': request.path})
 
 def portfolio(request):
-    return render(request, "portfolio.html")
+    return render(request, "portfolio.html", {'current_path': request.path})
 
 def blog(request):
-    return render(request, "blog.html")
+    return render(request, "blog.html", {'current_path': request.path})
 
 def processSubscription(request):
 

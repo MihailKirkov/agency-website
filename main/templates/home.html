@@ -1,5 +1,16 @@
-{% extends "base.html" %} {% block title %} Home Page {% endblock title%}
+{% extends "base.html" %} {% block title %}ASCENSION{% endblock title%}
 {% block content%}
-<p> home page </p>
+{% load static %}
 <h1>Newsletter subscription in "Blog" is now fully functional. It saves the emails with names in a database</h1>
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+
+<div class='video'>
+    <video src="{% static 'images/electric.mp4' %}" autoplay muted loop></video>
+    <div class="gradient-overlay"></div>
+</div>
+
+<div class="title-container">
+    <h1 contenteditable="true" class="title">ASCENSION</h1>
+</div>
+
 {% endblock content%}

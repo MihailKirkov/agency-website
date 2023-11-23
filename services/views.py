@@ -1,7 +1,4 @@
-from django.shortcuts import render, HttpResponse
-
-def hui(request):
-    return HttpResponse("hello world")
+from django.shortcuts import render
 
 def copywriting(request):
-    return render(request, "copywriting.html")
+    return render(request, "copywriting.html", {'current_path': '/services/'})
