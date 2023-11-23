@@ -31,72 +31,71 @@
 }
 
 .title-container {
-    width:50vw;
-    height:50vh;
+    width:70vw;
+    height:70vh;
     max-width: 1000px;
     max-height: 1000px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
 }
 
 .title {
+    width:100%;
     color:white!important;
     position: relative;
-    font-size: 5em;
+    font-size: 6em;
     z-index: 1;
-    letter-spacing: 12px;
+    letter-spacing: 1vw;
     text-transform: uppercase;
     text-align: center;
     line-height: 0.70em;
 }
 
+.title-sub {
+    margin-top: 20px;
+    width:80%;
+    text-align: center;
+}
+
 .title:hover {
-    animation: animateTitle 1s ease-in-out;
+    animation: animateTitle 0.5s ease-in-out;
     
     color:#fff;
-    text-shadow: 0 0 10px #03bcf4,
-                0 0 20px #03bcf4,
-                0 0 40px #03bcf4,
-                0 0 80px #03bcf4,
-                0 0 160px #03bcf4,
-                0 0 10px #03bcf4;
+    text-shadow:0 0 10px white,
+                0 0 20px #1f005c,
+                0 0 40px #9c155f,
+                0 0 80px #d5585c,
+                0 0 160px #ffb56b;
 }
 
 @keyframes animateTitle {
     0% {
-        color: #0e3742;
         text-shadow: none;
     }
-    50% {
-        color:#fff;
-        text-shadow: 0 0 10px #03bcf4,
-                    0 0 20px #03bcf4,
-                    0 0 40px #03bcf4;
-    }
     100% {
-        color:#fff;
-        text-shadow: 0 0 10px #03bcf4,
-                    0 0 20px #03bcf4,
-                    0 0 40px #03bcf4,
-                    0 0 80px #03bcf4,
-                    0 0 160px #03bcf4,
-                    0 0 10px #03bcf4;
+        text-shadow:0 0 10px white,
+                    0 0 20px #1f005c,
+                    0 0 40px #9c155f,
+                    0 0 80px #d5585c,
+                    0 0 160px #ffb56b;
     }
 }
 
-@keyframes animate {
-    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92% {
-        color: #0e3742;
-        text-shadow: none;
+@media(max-width:1024px) {
+    .title {
+        font-size: 5em;
     }
-    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100% {
-        color:#fff;
-        text-shadow: 0 0 10px #03bcf4,
-                    0 0 20px #03bcf4,
-                    0 0 40px #03bcf4,
-                    0 0 80px #03bcf4,
-                    0 0 160px #03bcf4,
-                    0 0 10px #03bcf4;
+}
+@media(max-width:768px){
+    .title{
+        font-size: 3em;
+    }
+}
+@media(max-width:456px){
+    .title{
+        font-size: 3em;
     }
 }

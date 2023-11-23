@@ -1,3 +1,8 @@
+:root {
+    --main-color1: #1f005c;
+    --main-color2: #ffb56b;
+}
+
 * {
     margin:0;
     padding:0;
@@ -31,24 +36,25 @@ body {
     color: transparent!important;
     transform: scale(1.15);
     transition: 0.1s ease;
-    background: linear-gradient(to right, #1f005c, #ffb56b);
+    background: linear-gradient(to right, var(--main-color1), var(--main-color2));
     background-clip: text;
 }
 
 .active {
     color: transparent!important;
     transform: scale(1.1);
-    background: linear-gradient(to right, #1f005c, #ffb56b);
+    background: linear-gradient(to right, var(--main-color1), var(--main-color2));
+    -webkit-background-clip: text;
     background-clip: text;
     border: 1px ridge;  
-    border-image: linear-gradient(to right, #1f005c, #ffb56b);
+    border-image: linear-gradient(to right, var(--main-color1), var(--main-color2));
     border-image-slice: 1;
     animation: borderAnimation 2s linear infinite;
-    text-shadow: 0 0 10px #1f005c,
-                    0 0 20px #ffb56b,
-                    0 0 40px #1f005c;
-    box-shadow: 0 0 15px #1f005c,
-                0 0 30px #ffb56b;
+    text-shadow: 0 0 10px var(--main-color1),
+                    0 0 20px var(--main-color2),
+                    0 0 40px var(var(--main-color1));
+    box-shadow: 0 0 15px var(--main-color1#1f005c),
+                0 0 30px var(--main-color2);
 }
 
 @keyframes borderAnimation {
@@ -72,7 +78,7 @@ body {
 .my-dropdown-toggle:focus {
     transform: scale(1.15);
     color:transparent!important;
-    background: linear-gradient(to right, #1f005c, #ffb56b);
+    background: linear-gradient(to right, var(--main-color1), var(--main-color2));
     background-clip: text;
 }
 
@@ -80,7 +86,7 @@ body {
 .dropdown-menu a:hover{
     transform: scale(1.1);
     color:transparent!important;
-    background: linear-gradient(to right, #1f005c, #ffb56b);
+    background: linear-gradient(to right, var(--main-color1), var(--main-color2));
     background-clip: text;
 }
 
