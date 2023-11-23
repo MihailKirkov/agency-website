@@ -54,7 +54,7 @@ body {
     text-shadow: 0 0 10px var(--main-color1),
                     0 0 20px var(--main-color2),
                     0 0 40px var(var(--main-color1));
-    box-shadow: 0 0 15px var(--main-color1#1f005c),
+    box-shadow: 0 0 15px var(--main-color1),
                 0 0 30px var(--main-color2);
 }
 
