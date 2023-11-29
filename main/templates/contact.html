@@ -1,19 +1,7 @@
 {% extends "base.html" %} {% block title %} Home Page {% endblock title%}
 {% block content%}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
-<div class='contact'>
-    
-    <h1>Contact Us</h1>
-    <form method='POST' action='https://getform.io/f/8380484d-00b2-4fa2-921e-e5bb01351326'>
-        <input type="text" placeholder='Name' name='name'/>
-        <input type="email" placeholder='Email' name='email'/>
-        
-        <input type="text" placeholder='Interested in' name='interest'/>
-        <input type="text" placeholder='Phone' name='phone'/>
-        <textarea placeholder='Message' name='message'></textarea>
-    </form>
-    
-    <button>Send Email</button>
+<div class="wrapper">
+    {% include 'contact_form.html' %}
 </div>
 {% endblock content%}

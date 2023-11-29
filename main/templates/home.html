@@ -3,14 +3,48 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 
-<div class='video'>
-    <video src="{% static 'images/electric.mp4' %}" autoplay muted loop></video>
-    <div class="gradient-overlay"></div>
+<div class="wrapper">
+    <div class='video'>
+        <video src="{% static 'images/electric.mp4' %}" autoplay muted loop></video>
+        <div class="gradient-overlay"></div>
+    </div>
+
+    <div class="title-container">
+        <h1 class="title">ASCENSION</h1>
+        <p class="title-sub">We are a dynamic agency, specialising in Web Development, Digital Marketing, Social Media, Video Editing and Copywriting. Our experienced team will help you scale the online side of your business.</p>
+    </div>
 </div>
 
-<div class="title-container">
-    <h1 class="title">ASCENSION</h1>
-    <p class="title-sub">We are an agency, specialising in Web Development, Digital Marketing, Social Media, Video Editing and Copywriting. Our experienced team will help you scale the online side of your business.</p>
+<div class="wrapper-split" style="background:linear-gradient(to bottom right, var(--main-color1), var(--main-color2));">
+    <div class="inner-left" style="background:rgba(0,0,0,0);color:black;margin-top:25px;">
+        <h1>Services</h1>
+        <hr/>
+        <ul class="services-ul">
+            <li>Web Development Services</li>
+            <li>Design Services</li>
+            <li>Social Media Services</li>
+            <li>Video Editing Services</li>
+            <li>Copywriting Services</li>
+            <li>Fixed-price Website Services</li>
+        </ul>
+
+        
+        <ul class="services-content">
+            <li>Business Websites</li>
+            <li>Ecommerce Websites</li>
+            <li>Web Applications</li>
+            <li>Shopify Websites</li>
+            <li>Custom Requests</li>
+        </ul>
+    </div>
+
+    <div class="inner-right" style="background:rgba(0,0,0,0);color:black;margin-top:10px;">
+        
+        {% include 'contact_form.html'%}
+    </div>
 </div>
 
+<div class="wrapper" style="background:green;">
+    
+</div>
 {% endblock content%}
