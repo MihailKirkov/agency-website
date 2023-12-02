@@ -12,39 +12,159 @@
     <div class="title-container">
         <h1 class="title">ASCENSION</h1>
         <p class="title-sub">We are a dynamic agency, specialising in Web Development, Digital Marketing, Social Media, Video Editing and Copywriting. Our experienced team will help you scale the online side of your business.</p>
+        <div class='title-inner' style="width:100%;display:flex;justify-content:center;align-items:center;gap:150px;">
+            <button class="button-scale btn-11">What We Offer</button>
+            <button class="button-scale btn-3" onload="scaleUp()"><span>Reach Out</span></button>
+        </div>
     </div>
 </div>
 
-<div class="wrapper-split" style="background:linear-gradient(to bottom right, var(--main-color1), var(--main-color2));">
-    <div class="inner-left" style="background:rgba(0,0,0,0);color:black;margin-top:25px;">
-        <h1>Services</h1>
-        <hr/>
-        <ul class="services-ul">
-            <li>Web Development Services</li>
-            <li>Design Services</li>
-            <li>Social Media Services</li>
-            <li>Video Editing Services</li>
-            <li>Copywriting Services</li>
-            <li>Fixed-price Website Services</li>
-        </ul>
-
-        
-        <ul class="services-content">
-            <li>Business Websites</li>
-            <li>Ecommerce Websites</li>
-            <li>Web Applications</li>
-            <li>Shopify Websites</li>
-            <li>Custom Requests</li>
-        </ul>
+<div class="wrapper-split" style="background:var(--main-gradient);z-index:1;box-shadow:0 0 35px var(--main-color1),0 0 50px #c5415d, 0 0 75px var(--main-color2);padding-bottom:50px;padding-top:50px;">
+    <div class="inner-left" style="background:rgba(0,0,0,0);color:black;">
+        <h1 style="color: white; font-size: 5em; letter-spacing: 0.1em; font-weight: 600;" class="services-title">Services</h1>
+        <hr style="color: white; width: 90%; border:1px solid white; margin:20px 30px;">
+            <div class="services-ul">
+                <a onclick="toggleList('list-webdevelopment', this)" class="service-button active-service"><span>Web Development</span><i></i></a>
+                <a onclick="toggleList('list-design', this)" class="service-button"><span>Design Services</span><i></i></a>
+                <a onclick="toggleList('list-socialmedia', this)" class="service-button"><span>Social Media</span><i></i></a>
+                <a onclick="toggleList('list-videoediting', this)" class="service-button"><span>Video Editing</span><i></i></a>
+                <a onclick="toggleList('list-copywriting', this)" class="service-button"><span>Copywriting</span><i></i></a>
+                <a onclick="toggleList('list-fixedpricewebsite', this)" class="service-button"><span>Fixed-price Websites</span><i></i></a>
+            </div>
     </div>
 
     <div class="inner-right" style="background:rgba(0,0,0,0);color:black;margin-top:10px;">
-        
-        {% include 'contact_form.html'%}
+        <ul id="list-webdevelopment" class="services-list">
+            <a href="{% url 'web_development' %}"><span>Business Websites</span></a>
+            <a href="{% url 'web_development' %}">Ecommerce Websites</a>
+            <a href="{% url 'web_development' %}">Web Applications</a>
+            <a href="{% url 'web_development' %}">Shopify Websites</a>
+            <a href="{% url 'web_development' %}">Custom Requests</a>
+            <button onclick="redirectToLink(`{% url 'web_development' %}`)">Read More</button>
+        </ul>
+
+        <ul id="list-design" class="services-list hidden">
+            <a href="{% url 'web_development' %}"><span>Website Design</span></a>
+            <a href="{% url 'web_development' %}">Logo Design</a>
+            <a href="{% url 'web_development' %}">Brand and Identity</a>
+            <button onclick="redirectToLink(`{% url 'web_development' %}`)">Read More</button>
+        </ul>
+
+        <ul id="list-socialmedia" class="services-list hidden">
+            <a href="{% url 'web_development' %}">Account Management</a>
+            <button onclick="redirectToLink(`{% url 'web_development' %}`)">Read More</button>
+        </ul>
+
+        <ul id="list-videoediting" class="services-list hidden">
+            <a href="{% url 'web_development' %}">Video Editing</a>
+            <button onclick="redirectToLink(`{% url 'web_development' %}`)">Read More</button>
+        </ul>
+
+        <ul id="list-copywriting" class="services-list hidden">
+            <a href="{% url 'web_development' %}">Copywriting</a>
+            <button onclick="redirectToLink(`{% url 'web_development' %}`)">Read More</button>
+        </ul>
+
+        <ul id="list-fixedpricewebsite" class="services-list hidden">
+            <a href="{% url 'web_development' %}">Fixed Price Websites</a>
+            <button onclick="redirectToLink(`{% url 'web_development' %}`)">Read More</button>
+        </ul>
+    </div>
+</div>
+<div class="wrapper" style="background:var(--main-gradient);z-index:1;padding-bottom:50px;padding-top:50px;">
+    <div class="wrapper-contact">
+        {% include 'contact_form.html' %}
     </div>
 </div>
 
-<div class="wrapper" style="background:green;">
-    
+<div class="wrapper" style="background:rgba(0,0,0,0.9);height:100vh;">
+    <div class="wrapper-split" style="height:80%;">
+        <div class="inner-left" style="color:white;height:100%;">
+            <div class="inner" style="width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+                <div class="icon-element" style="display:flex;flex-direction:row;height:50%;justify-content:center;align-items:center;">
+                    <img class="" src="{% static 'images/computer.svg' %}" style="width:124px;height:124px;"/>
+                    <div style="width:50%;">
+                        <h1 style="font-size:1em;">UNLEASH YOUR CREATIVITY!</h1>
+                        <p>Explore a world of limitless possibilities with our innovative solutions. From design to functionality, we empower you to bring your creative vision to life</p>
+                    </div>
+                </div>
+                <div class="icon-element" style="display:flex;flex-direction:row;height:50%;justify-content:center;align-items:center;">
+                    <img class="" src="{% static 'images/computer.svg' %}" style="width:124px;height:124px;"/>
+                    <div style="width:50%;">
+                        <h1 style="font-size:1em;">ELEVATE YOUR BRAND!</h1>
+                        <p>Transform your brand identity and stand out in the market. Our team of experts will collaborate with you to create a compelling brand image that resonates with your audience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inner-right" style="color:white;">
+            <div class="inner" style="width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+                <div class="icon-element" style="display:flex;flex-direction:row;height:50%;justify-content:center;align-items:center;">
+                    <img class="" src="{% static 'images/computer.svg' %}" style="width:124px;height:124px;"/>
+                    <div style="width:50%;">
+                        <h1 style="font-size:1em;">INSPIRE YOUR AUDIENCE!</h1>
+                        <p>Captivate your audience with engaging and immersive experiences. Our cutting-edge technologies and creative approach will leave a lasting impression on your users</p>
+                    </div>
+                </div>
+                <div class="icon-element" style="display:flex;flex-direction:row;height:50%;justify-content:center;align-items:center;">
+                    <img class="" src="{% static 'images/computer.svg' %}" style="width:124px;height:124px;"/>
+                    <div style="width:50%;">
+                        <h1 style="font-size:1em;">ENHANCE YOUR USER EXPERIENCE!</h1>
+                        <p>User satisfaction is paramount. Elevate your digital presence with user-centric designs and seamless experiences that keep your audience engaged and satisfied.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="button-container">
+        <button>Reach Out!</button>
+    </div>  
 </div>
+
+<div class="wrapper" style="background:var(--main-gradient);box-shadow:0 0 35px var(--main-color1), 0 0 50px var(--main-color2);text-align:center;">
+    <h1>About Ascension</h1>
+    <div class="wrapper-split">
+
+    </div>
+
+</div>
+
+    
+<footer style="height:30vh;background:rgba(0,0,0,0.9);text-align:center;">
+    <h3>footer</h3>
+    <h1>vlqvo podobno na navbar, logo posredata, otdqsno newsletter signup ili socialni mreji/contact form </h1>
+</footer>
+
+<script>
+    function toggleList(listId, anchor) { // takes care of the buttons in the Services section
+        // Hide all lists
+        var lists = document.querySelectorAll('.services-list');
+        lists.forEach(function(list) {
+            list.classList.add('hidden');
+        });
+
+        // Show the selected list
+        var selectedList = document.getElementById(listId);
+        if (selectedList) {
+            selectedList.classList.remove('hidden');
+        }
+        // set other button as inactive
+        var allButtons = document.querySelectorAll('.service-button');
+            allButtons.forEach(function(btn) {
+                btn.classList.remove('active-service');
+            });
+        // Set button as active
+        anchor.classList.add('active-service');
+
+        
+    }
+    function redirectToLink(link) {
+        window.location.href = link;
+    }
+    
+</script>
+<script src="{% static 'js/home.js' %}"> </script>
+
 {% endblock content%}
