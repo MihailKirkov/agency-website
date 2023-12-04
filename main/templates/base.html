@@ -76,22 +76,28 @@
                                     Social Media&#x25BC
                                 </a>
                                 <ul class="dropdown-menu" style="margin-bottom:10px;">
-                                    <li><a class="dropdown-item" href="#">Business Website Development</a></li>
-                                    <li><a class="dropdown-item" href="#">E-com Website Development</a></li>
-                                    <li><a class="dropdown-item" href="#">Blog Website Development</a></li>
-                                    <li><a class="dropdown-item" href="#">Shopify Website Development</a></li>
-                                    <li><a class="dropdown-item" href="#">Web Application Development</a></li>
-                                    <li><a class="dropdown-item" href="#">Shopify Website</a></li>
+                                    <li><a class="dropdown-item" href="#">Account Management</a></li>
+                                    <li><a class="dropdown-item" href="#">Social Media Advertising</a></li>
                                 </ul>
                             </li>
                             
-                            <li><a class="dropdown-item" href="{% url 'video_editing' %}">Video Editing</a></li>
+                            {% comment %} <li><a class="dropdown-item" href="{% url 'video_editing' %}">Video Editing</a></li> {% endcomment %}
+                            <li class="dropdown">
+                                <a class="nav-link my-dropdown-toggle mx-3 my-1 p-1 {% if current_path == '/services/' %}active{% endif %}" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" style="text-align:center!important;">
+                                    Video Editing&#x25BC
+                                </a>
+                                <ul class="dropdown-menu" style="margin-bottom:10px;">
+                                    <li><a class="dropdown-item" href="{% url 'video_editing' %}">Video Editing</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'video_editing' %}">Hire a Video Editor</a></li>
+                                </ul>
+                            </li>
                             {% comment %} <li>
                                 <hr class="dropdown-divider">
                             </li> {% endcomment %}
                             <li><a class="dropdown-item" href="{% url 'copywriting' %}">Copywriting</a></li>
                             
-                            <li><a class="dropdown-item" href="{% url 'fixed_price_websites' %}">Fixed Price Websites</a></li>
+                            <li><a class="dropdown-item" href="{% url 'fixed_price_services' %}">Fixed Price Services</a></li>
                         </ul>
 
                     </li>

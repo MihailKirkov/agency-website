@@ -13,15 +13,15 @@
         <h1 class="title">ASCENSION</h1>
         <p class="title-sub">We are a dynamic agency, specialising in Web Development, Digital Marketing, Social Media, Video Editing and Copywriting. Our experienced team will help you scale the online side of your business.</p>
         <div class='title-inner' style="width:100%;display:flex;justify-content:center;align-items:center;gap:150px;">
-            <button class="button-scale btn-11">What We Offer</button>
-            <button class="button-scale btn-3" onload="scaleUp()"><span>Reach Out</span></button>
+            <button class="button-scale btn-11" onclick="scrollToDiv('services')">What We Offer</button>
+            <button class="button-scale btn-3" onclick="scrollToDiv('contact')"><span>Reach Out</span></button>
         </div>
     </div>
 </div>
 
-<div class="wrapper-split" style="background:var(--main-gradient);z-index:1;box-shadow:0 0 35px var(--main-color1),0 0 50px #c5415d, 0 0 75px var(--main-color2);padding-bottom:50px;padding-top:50px;">
+<div id="services" class="wrapper-split" style="background:var(--main-gradient);z-index:1;box-shadow:0 0 35px var(--main-color1),0 0 50px #c5415d, 0 0 75px var(--main-color2);padding-bottom:50px;padding-top:50px;">
     <div class="inner-left" style="background:rgba(0,0,0,0);color:black;">
-        <h1 style="color: white; font-size: 5em; letter-spacing: 0.1em; font-weight: 600;" class="services-title">Services</h1>
+        <h1 class="services-title" style="color: white; font-size: 5em; letter-spacing: 0.1em; font-weight: 600;" class="services-title">Services</h1>
         <hr style="color: white; width: 90%; border:1px solid white; margin:20px 30px;">
             <div class="services-ul">
                 <a onclick="toggleList('list-webdevelopment', this)" class="service-button active-service"><span>Web Development</span><i></i></a>
@@ -29,7 +29,7 @@
                 <a onclick="toggleList('list-socialmedia', this)" class="service-button"><span>Social Media</span><i></i></a>
                 <a onclick="toggleList('list-videoediting', this)" class="service-button"><span>Video Editing</span><i></i></a>
                 <a onclick="toggleList('list-copywriting', this)" class="service-button"><span>Copywriting</span><i></i></a>
-                <a onclick="toggleList('list-fixedpricewebsite', this)" class="service-button"><span>Fixed-price Websites</span><i></i></a>
+                <a onclick="toggleList('list-fixedpriceservices', this)" class="service-button"><span>Fixed-price Services</span><i></i></a>
             </div>
     </div>
 
@@ -40,7 +40,7 @@
             <a href="{% url 'web_development' %}">Web Applications</a>
             <a href="{% url 'web_development' %}">Shopify Websites</a>
             <a href="{% url 'web_development' %}">Custom Requests</a>
-            <button onclick="redirectToLink(`{% url 'web_development' %}`)">Read More</button>
+            <button onclick="redirectToLink(`{% url 'web_development' %}`)"><span>Read More<span></button>
         </ul>
 
         <ul id="list-design" class="services-list hidden">
@@ -52,11 +52,13 @@
 
         <ul id="list-socialmedia" class="services-list hidden">
             <a href="{% url 'web_development' %}">Account Management</a>
+            <a href="{% url 'web_development' %}">Social Media Advertising</a>
             <button onclick="redirectToLink(`{% url 'web_development' %}`)">Read More</button>
         </ul>
 
         <ul id="list-videoediting" class="services-list hidden">
             <a href="{% url 'web_development' %}">Video Editing</a>
+            <a href="{% url 'web_development' %}">Hire a Video Editor</a>
             <button onclick="redirectToLink(`{% url 'web_development' %}`)">Read More</button>
         </ul>
 
@@ -65,20 +67,21 @@
             <button onclick="redirectToLink(`{% url 'web_development' %}`)">Read More</button>
         </ul>
 
-        <ul id="list-fixedpricewebsite" class="services-list hidden">
-            <a href="{% url 'web_development' %}">Fixed Price Websites</a>
+        <ul id="list-fixedpriceservices" class="services-list hidden">
+            <a href="{% url 'web_development' %}">Fixed Price Services</a>
             <button onclick="redirectToLink(`{% url 'web_development' %}`)">Read More</button>
         </ul>
     </div>
 </div>
-<div class="wrapper" style="background:var(--main-gradient);z-index:1;padding-bottom:50px;padding-top:50px;">
+<div id="contact" class="wrapper" style="background:var(--main-gradient);z-index:1;padding-bottom:50px;padding-top:50px;">
     <div class="wrapper-contact">
         {% include 'contact_form.html' %}
     </div>
 </div>
 
-<div class="wrapper" style="background:rgba(0,0,0,0.9);height:100vh;">
-    <div class="wrapper-split" style="height:80%;">
+<div id="wrapper" class="wrapper" style="background:rgba(0,0,0,0.9);height:100vh;position:relative; box-shadow: 0 0 75px black; z-index: 1;">
+    <h2 id="followCursor" style="text-align: center; color: gray; position: absolute; width: 100%; font-size: 27em; top: 50%; left: 50%; transform: translate(-50%, -50%);z-index:0; opacity: 0.3; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);">Why Us</h2>
+    <div class="wrapper-split" style="min-height:80vh;height:80%;">
         <div class="inner-left" style="color:white;height:100%;">
             <div class="inner" style="width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;">
                 <div class="icon-element" style="display:flex;flex-direction:row;height:50%;justify-content:center;align-items:center;">
@@ -118,23 +121,67 @@
         </div>
 
     </div>
-    <div class="button-container">
+    <div class="button-container icon-element">
         <button>Reach Out!</button>
-    </div>  
+    </div>
 </div>
 
-<div class="wrapper" style="background:var(--main-gradient);box-shadow:0 0 35px var(--main-color1), 0 0 50px var(--main-color2);text-align:center;">
-    <h1>About Ascension</h1>
-    <div class="wrapper-split">
+<div id="animatedDiv" class="wrapper" style="position:relative; background:var(--main-gradient);box-shadow:0 0 35px var(--main-color1), 0 0 50px var(--main-color2);text-align:center; z-index: 2;">
+    <h2 id="followScroll" style="text-align: center; color:lightgray;position:absolute;width:100%;font-size:27em;top:50%;left:50%;transform:translate(-50%, -50%);z-index:0;opacity:0.3;text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); transition: top 1s ease-in-out;">About Us</h2>
+    <div class="wrapper-split opacity-effect">
+        <div class="inner-left" style="z-index:1;">
+            <video src="{% static 'images/electric.mp4' %}" style="width:80%;height:80%;opacity:0.7;object-fit: fill;" autoplay muted loop>
+        </div>
+        <div class="inner-right" style="z-index:1;">
+            <h1 class="about-title" style="margin-bottom:50px; margin-top: 15px; font-size: 5em; letter-spacing: 0.1em; font-weight: 700;">About Ascension</h1>
+            <p style="padding:15px;color: #f3f3f3; letter-spacing: .5px; font-size: 1.1em; font-weight: 600;line-height:30px;">Ascension is more than just a digital agency; it's a creative powerhouse committed to transforming ideas into impactful digital experiences. With a bold and dynamic approach, Ascension specializes in a range of services, including Web Development, Digital Marketing, Social Media, Video Editing, and Copywriting. Our experienced team is dedicated to helping businesses scale their online presence, providing innovative solutions that unleash creativity, elevate brand identities, inspire audiences, and enhance user experiences.
+                Ascension is your digital partner for unleashing creativity, elevating brands, inspiring audiences, and enhancing user experiences. Specializing in Web Development, Digital Marketing, Social Media, Video Editing, and Copywriting, our dynamic team is dedicated to scaling your online presence.
 
+                At Ascension, we go beyond conventional boundaries, offering services like Business Websites, Ecommerce Platforms, Web Applications, and more. Our user-centric designs and immersive experiences ensure audience engagement and satisfaction.
+                
+                Empower your brand with Ascension's innovative solutions. Join us on a journey where creativity knows no bounds. Reach out and ascend to new digital heights with Ascension.
+            </p>
+            <button class="about-button">Read More</button>
+        </div>
     </div>
 
 </div>
 
     
 <footer style="height:30vh;background:rgba(0,0,0,0.9);text-align:center;">
-    <h3>footer</h3>
-    <h1>vlqvo podobno na navbar, logo posredata, otdqsno newsletter signup ili socialni mreji/contact form </h1>
+    {% comment %} <h3>footer</h3>
+    <h1>vlqvo podobno na navbar, logo posredata, otdqsno newsletter signup ili socialni mreji/contact form </h1> {% endcomment %}
+    <div class="inner-1">
+        <div class="mini-navbar" style="height:20%;">
+            <a style="text-decoration:none;color:white;" class="mx-3 my-1 p-1" href="{% url 'home'%}">Home</a>
+            <a style="text-decoration:none;color:white;" class="mx-3 my-1 p-1" href="{% url 'about'%}">About</a>
+            <a style="text-decoration:none;color:white;" class="mx-3 my-1 p-1" href="{% url 'contact'%}">Contact Us</a>
+        </div>
+        <div class="newsletter-div" style="height:80%; padding: 20px;">
+            <p>Sign Up For Our Newsletter!</p>
+            <form>
+                {% csrf_token %}
+                <input class='footer-input' id="name" type="text" name="name" placeholder="Name"/>
+                <input class='footer-input' id="email" type="email" name="email" placeholder="Email"/>
+            </form>
+            <button type="submit" value="Subscribe to newsletter">Subscribe</button>
+        </div>
+    </div>
+    <div class="inner-2">
+        <img src="{% static 'images/logo.png' %}" style="width:80%; height:70%; padding: 20px;">
+        <p>Copyright © 2023 Ascension</p>
+    </div>
+    <div class="inner-3">
+        <div class="footer-icons" style="padding:20px;">
+            <a href="https://www.instagram.com" ><img class="mx-3" src="{% static 'images/instagram.svg' %}" style="width:64px;height:64px;background:white;border-radius:25px;"/></a>
+            <a href="https://www.facebook.com" ><img class="mx-3" src="{% static 'images/facebook.svg' %}" style="width:64px;height:64px;background:white;border-radius:35px;"/></a>
+        </div>
+        <div class="footer-terms" style="padding:20px;display: flex;justify-content: space-between;">
+            <a class="mx-3" style="text-decoration:none;color:white;" href="{% url 'terms-conditions' %}">Terms & Conditions</a>
+            <a class="mx-3" style="text-decoration:none;color:white;" href="{% url 'privacy-policy' %}">Privacy Policy</a>
+        </div>
+    </div>
+    
 </footer>
 
 <script>

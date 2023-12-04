@@ -13,7 +13,7 @@
 .video video {
     width:100%;
     height:100%;
-    object-fit: fill;    
+    object-fit: fill;
 }
 
 .gradient-overlay {
@@ -207,7 +207,6 @@
     opacity:0;
 }
 
-
 .btn-11:hover {
     color: #fff;
 }
@@ -385,11 +384,18 @@
 
 .services-list button {
     background:white;
-    width:15%;
+    width:20%;
     padding:10px 20px;
     font-size: 16px;
     border-radius: 30px;
     box-shadow: -3px 5px 5px black;
+}
+.services-list button span {
+    font-weight: 600;
+    color:transparent;
+    background: var(--main-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .services-list button:hover {
@@ -401,6 +407,11 @@
     transition: 0.1s ease-in-out;
     transform: translateY(5px) translateX(-3px);
 
+}
+
+.icon-element {
+    transform: scale(0.5);
+    opacity: 0;
 }
 
 .button-container button {
@@ -419,6 +430,28 @@
     transition: .3s ease-in-out;
     box-shadow: 0 0 25px var(--main-color2),
                 0 0 50px var(--main-color1);
+}
+
+.about-button {
+    width:50%;
+    margin-top: 25px;
+    background: var(--main-gradient);
+    border:1px solid white;
+    color: white;
+    padding: 15px;
+    font-size: 1.5em;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.opacity-effect {
+    opacity: 0.1;
+}
+
+.about-button:hover {
+    transition: .3s ease-in-out;
+    box-shadow: 0 0 25px var(--main-color1),
+                0 0 50px var(--main-color2);
 }
 
 .animation-scale {
@@ -444,6 +477,40 @@
 .animation-translateXRight {
     animation: animateSlideInRight;
     animation-duration: 1s;
+}
+
+footer {
+    position: relative;
+
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-1 {
+    flex:1;
+    height:100%;
+    align-items: top;
+    padding-top:25px;
+}
+
+.inner-2 {
+    flex:1;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inner-3{
+    flex:1;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 @keyframes animateTitle {
@@ -491,6 +558,27 @@
     }
 }
 
+@media(max-width:1440px) {
+    .services-list a {
+        width: 35%;
+    }
+    #followCursor {
+        font-size: 25em!important;
+    }
+    #followScroll {
+        font-size:20em!important;
+    }
+    .about-button {
+        margin-bottom: 20px;
+    }
+    footer {
+        height:35vh!important;
+    }
+    .newsletter-div button{
+        width:30%;
+    }
+}
+
 @media(max-width:1024px) {
     .title {
         font-size: 5em;
@@ -507,13 +595,41 @@
         margin: 0 20%;
         font-size: 18px;
     }
+    .btn-3, .btn-11 {
+        width: 160px;
+        height: 48px;
+    }
+    .btn-3 {
+        line-height: 48px;
+    }
+    #followCursor {
+        font-size: 18em!important;
+    }
+    #followScroll {
+        font-size:15em!important;
+    }
+    
+    .newsletter-div button{
+        font-size: .9em;
+    }
 }
 @media(max-width:768px){
     .title{
-        font-size: 3em;
+        font-size: 4.5em;
+    }
+    .title-sub{
+        font-size: 1em;
     }
     .wrapper-split {
         flex-direction: column!important;
+    }
+
+    .services-ul a {
+        margin: 10px;
+    }
+
+    .services-list a {
+        margin: 10px;
     }
 
     .form-container {
@@ -531,12 +647,45 @@
     .form-container textarea {
         padding-top: 10px!important;
         padding-bottom: 15px!important;
-        line-height: 10px;
+        line-height: 30px;
     }
     .form-container input,
     .form-container textarea {
         padding: 5px;
         padding-top: 12.5px;
+    }
+
+    .icon-element h1{
+        font-size: 1em;
+    }
+    .icon-element p {
+        font-size: .8em;
+    }
+    .icon-element img {
+        width:100px!important;
+        height:100px!important;
+    }
+    .button-container button {
+        font-size: 1em;
+    }
+    footer {
+        font-size: .8em;
+    }
+    .footer-icons img {
+        width:48px!important;
+        height:48px!important;
+    }
+    .newsletter-div button {
+        width:35%;
+    }
+    .mini-navbar a{
+        padding:0!important;
+    }
+    .about-title{
+        font-size: 4.6em!important;
+    }
+    .services-title {
+        font-size: 4.6em!important;
     }
 }
 @media(max-width:425px){
