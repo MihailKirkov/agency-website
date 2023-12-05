@@ -690,10 +690,22 @@ footer {
     .services-title {
         font-size: 4.6em!important;
     }
+    #followCursor {
+        font-size: 13em!important;
+    }
+    #followScroll {
+        font-size: 10em!important;
+    }
+}
+@media(max-width:600px){
+    .title {
+        font-size: 3em;
+    }
 }
 @media(max-width:425px){
     .title{
         font-size: 3em;
+        width:100vw;
     }
     .wrapper {
         width:100%;
@@ -703,9 +715,9 @@ footer {
         height:160vh;
     }
     .btn-11, .btn-3 {
-        width:200px;
+        width:120px;
         height:60px;
-        font-size: .6em;
+        font-size: .8em;
     }
     .btn-3 {
         line-height: 60px;
@@ -745,10 +757,10 @@ footer {
         height:80px!important;
     }
     #followCursor {
-        font-size: 13em!important;
+        font-size: 11em!important;
     }
     #followScroll {
-        font-size: 10em!important;
+        font-size: 8em!important;
     }
     .about-text {
         font-size: .7em!important;
@@ -777,5 +789,26 @@ footer {
     }
     .newsletter-div button {
         width:80%;
+    }
+    .title-inner {
+        gap:100px!important;
+    }
+}
+@media(max-width:375px) {
+    #followCursor {
+        font-size: 7em!important;
+    }
+    #followScroll {
+        font-size: 4em!important;
+    }
+    .title-inner {
+        gap:50px!important;
+    }
+    .btn-11 {
+        width:100px;
+        padding: 10px 5px;
+    }
+    .btn-3 {
+        width:100px;
     }
 }
